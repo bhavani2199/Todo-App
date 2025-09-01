@@ -7,6 +7,15 @@ export default function Home() {
 
   const [todos, setTodos] = useState([]);
 
+   useEffect(() => {
+    const saved = localStorage.getItem('todos');
+    if (saved) setTodos(JSON.parse(saved));
+  }, []);
+
+   useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
    const addTodo = useCallback((todo) => {
     setTodos(prev => [...prev, { id: Date.now(), ...todo }]);
   }, []);
