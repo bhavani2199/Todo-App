@@ -19,7 +19,7 @@ export default function Home() {
     
       <div style={{ maxWidth: '600px', margin: '0 auto' }}>
       <h1 className="text-3xl flex items-center justify-center font-bold text-blue-800">Todo App</h1>
-      <h1 className='py-5 underline text-2xl font-bold'>My To-Do List</h1>
+      <h1 className='py-5 underline text-2xl font-bold'>My To-Do List ({todos.length})</h1>
       <TodoForm addTodo={addTodo} />
       <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
